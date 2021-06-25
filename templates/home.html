@@ -95,6 +95,26 @@
 </section>
 <br><br>
 
+<div class="container">
+    <section class="row">
+
+        {% for row in rows %}
+            <div class="col-md-3">
+                <img src="https://modcom.co.ke/pics/{{row[6]}}" alt="" class="img-fluid">
+                <br>
+                <b>{{row[1]}}</b> <br>
+                <p class="text-muted">{{row[2]}}</p>
+                <b>{{row[4]}}</b> <br>
+                <i class="text-info"> <strike> {{row[5]}} </strike>  </i> <br>
+                <a href="" class="btn btn-danger">Purchase</a>
+                <br><br>
+            </div>
+        {% endfor %}
+
+
+    </section>
+</div>
+
 
 
 
