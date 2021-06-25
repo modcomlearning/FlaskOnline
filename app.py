@@ -3,9 +3,25 @@ from flask import *
 app = Flask(__name__)
 # above __name__ means this is now your main app
 
+
+
+# Database  NorthWind
+# Table Items
+# Host   -  localhost
+# Username   root
+# Password  not set
+
+import pymysql
 @app.route('/')
 def home():
+    # Connect to database
+    connection = pymysql.connect(host='localhost', user='root',password='',
+                                 database='NorthWind')
+
+    
     return render_template('home.html')
+
+
 
 
 @app.route('/login')
