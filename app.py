@@ -5,14 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    # Connect to database
-    conn = pymysql.connect(host="localhost", user="root", password="", database="NorthWind")
-    cursor = conn.cursor()
-    # execute the query using the cursor
-    cursor.execute("select * from Items")
-    # check if no records were found
-    rows = cursor.fetchall()
-    return render_template('home.html', rows=rows)
+    return render_template('home.html')
 
 
 @app.route('/login')
@@ -28,19 +21,6 @@ def register():
 @app.route('/profile')
 def profile():
     return 'This is my Profile'
-
-
-import pymysql
-@app.route('/products')
-def products():
-    # Connect to database
-    conn = pymysql.connect(host="localhost", user="root", password="", database="NorthWind")
-    cursor = conn.cursor()
-    # execute the query using the cursor
-    cursor.execute("select * from Items")
-    # check if no records were found
-    rows = cursor.fetchall()
-    return render_template('products.html', rows=rows)
 
 
 
