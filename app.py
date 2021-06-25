@@ -18,7 +18,11 @@ def home():
     connection = pymysql.connect(host='localhost', user='root',password='',
                                  database='NorthWind')
 
+    # Create a cursor to execute SQL Query
+    cursor = connection.cursor()
+    cursor.execute('SELECT * FROM Items')
     
+
     return render_template('home.html')
 
 
