@@ -14,6 +14,7 @@ app = Flask(__name__)
 import pymysql
 @app.route('/')
 def home():
+
     # Connect to database
     connection = pymysql.connect(host='localhost', user='root',password='',
                                  database='NorthWind')
@@ -21,9 +22,11 @@ def home():
     # Create a cursor to execute SQL Query
     cursor = connection.cursor()
     cursor.execute('SELECT * FROM Items')
-    
+    # AFter executing the query above, get all rows
+    rows = cursor.fetchall()
 
-    return render_template('home.html')
+    # after getting the rows forward them to home.html for users to see them
+    return render_template('home.html', rows = rows)
 
 
 
