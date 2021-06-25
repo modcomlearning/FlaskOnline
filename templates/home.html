@@ -5,7 +5,17 @@
     <title>HomePage</title>
 <!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">-->
     <link rel="stylesheet" href="../static/bootstrap-4.6.0-dist/css/bootstrap.css">
+    <style>
+        p {
+       overflow: hidden;
+       text-overflow: ellipsis;
+       display: -webkit-box;
+       line-height: 16px;     /* fallback */
+       max-height: 32px;      /* fallback */
+       -webkit-line-clamp: 2; /* number of lines to show */
 
+}
+    </style>
 </head>
 <body>
 <!-- how do we run this? don't run it from here, run from python-->
@@ -99,9 +109,10 @@
     <div class="row">
         {% for row in rows %}
           <div class="cardh col-md-3">
-              <img src="https://modcom.co.ke/pics/{{row[6]}}" alt="" width="60%">
+              <img src="https://modcom.co.ke/pics/{{row[6]}}" alt=""
+                    class="img-fluid">
               <h5 class="card-heading">{{row[1]}}</h5>
-              <p class="text-muted" style="height:25%;">{{row[2]}}</p>
+              <p class="text-muted">{{row[2]}}</p>
               <b>KES {{row[4]}}</b> <br>
               <b><strike class="text-danger">KES {{row[5]}} </strike></b> <br>
               <a href="" class="btn btn-outline-info">Purchase</a>
