@@ -34,17 +34,20 @@ def home():
 # this route will search a product with this product id
 @app.route('/single/<id>')
 def single(id):
+
     connection = pymysql.connect(host='localhost', user='root', password='',
                                  database='NorthWind')
 
     # Create a cursor to execute SQL Query
     cursor = connection.cursor()
-    cursor.execute('SELECT * FROM Items')
-    # AFter executing the query above, get all rows
-    rows = cursor.fetchall()
 
-    # after getting the rows forward them to home.html for users to see them
-    return render_template('home.html', rows=rows)
+    # below %s is a place holder for id
+    cursor.execute('SELECT * FROM Items WHERE ProductID = %s', (id))
+    # AFter executing the query above, get one row because
+    row = cursor.fetchone()
+
+    # after getting the row forward it to single.html for users to see it
+    return render_template('single.html', row=row)
 
 
 
