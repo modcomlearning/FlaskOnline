@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Display</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+</head>
+<body>
+ <div class="jumbotron">
+     <h2>Bags Limited</h2>
+     <a href="/" class="btn btn-warning">Continue Shopping</a>
+ </div>
+
+
+<div class="container">
+    <section class="row">
+         <div class="col-md-6">
+             <img src="https://modcom.co.ke/pics/{{row[6]}}" alt=""
+                  class="img-fluid" width="60%">
+         </div>
+
+        <div class="col-md-6">
+            <h2>{{row[1]}}</h2>
+            <p class="text-muted">{{row[2]}}</p>
+            <i>Category: {{row[3]}}</i> <br>
+            <h5 class="text-warning">{{row[4]}}</h5>
+            <b> <strike> {{row[5]}} </strike></b> <br>
+            <u>Updated {{row[7]}}</u> <br>
+        </div>
+    </section>
+
+
+
+
+</div>
+</body>
+</html>
