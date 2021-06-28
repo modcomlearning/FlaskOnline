@@ -30,6 +30,29 @@ def home():
 
 
 
+# we create a /single
+# this route will search a product with this product id
+@app.route('/single/<id>')
+def single(id):
+    connection = pymysql.connect(host='localhost', user='root', password='',
+                                 database='NorthWind')
+
+    # Create a cursor to execute SQL Query
+    cursor = connection.cursor()
+    cursor.execute('SELECT * FROM Items')
+    # AFter executing the query above, get all rows
+    rows = cursor.fetchall()
+
+    # after getting the rows forward them to home.html for users to see them
+    return render_template('home.html', rows=rows)
+
+
+
+
+
+
+
+
 @app.route('/login')
 def login():
     return 'This is a login .. '
