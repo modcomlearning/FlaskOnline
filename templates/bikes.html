@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bikes</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+</head>
+<body>
+
+<h1 class="jumbotron">My Bikes</h1>
+<a href="/" class="btn">Back Home</a>
+
+<div class="container">
+    <section class="row">
+    <!--  loop each row at a time-->
+        {% for row in rows %}
+            <div class="col-md-3">
+                <img src="{{row[6]}}" alt="" class="img-fluid">
+                <br>
+                <b>{{row[1]}}</b> <br>
+                <p class="text-muted">{{row[2]}}</p>
+                <b>{{row[4]}}</b> <br>
+                <i class="text-info"> <strike> {{row[5]}} </strike>  </i> <br>
+                <a href="/singlebikes/{{row[0]}}" class="btn btn-danger">Buy Now</a>
+                <br><br>
+            </div>
+        {% endfor %}
+
+
+    </section>
+</div>
+</body>
+</html>

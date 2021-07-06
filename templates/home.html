@@ -24,11 +24,27 @@
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
+                    <a class="nav-link" href="/signin">Sign In</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Register</a>
+                    <a class="nav-link" href="/signup">Sign Up</a>
                   </li>
+
+                    <li class="nav-item nav-link">
+                        {% if session['key'] %}
+                              Welcome   {{session['key']}} &nbsp; &nbsp;
+                              <a href="/signout">Signout</a>
+                        {% endif %}
+                    </li>
+
+
+                       <li class="nav-item">
+                           <a href="/bikes" class="nav-link">Bikes</a>
+                       </li>
+
+                       <li class="nav-item">
+                           <a href="/laptops" class="nav-link">Laptops</a>
+                       </li>
                 </ul>
               </div>
             </nav>
